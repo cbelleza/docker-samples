@@ -17,12 +17,11 @@ RUN mkdir /opt && \
 	rm -rf ${TOMCAT_HOME}/webapps/* && \
 	apk del curl && \
 	rm -rf /tmp/* /var/cache/apk/*
-	
-USER tomcat
-
-WORKDIR ${TOMCAT_HOME}
 
 EXPOSE 8080
+VOLUME ${TOMCAT_HOME}/webapps
+WORKDIR ${TOMCAT_HOME}
+USER tomcat
 
 # run tomcat by default
 CMD ["/opt/apache-tomcat/bin/catalina.sh", "run"]
