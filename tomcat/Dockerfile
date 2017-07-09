@@ -14,7 +14,7 @@ RUN mkdir /opt && \
     ln -s /opt/apache-tomcat-${TOMCAT_VERSION} ${TOMCAT_HOME} && \
     adduser tomcat -h $TOMCAT_HOME -D && \
     chown -R tomcat:tomcat /opt && \
-	chmod -R g-s /opt && \
+    chmod -R g-s /opt && \
     rm -rf ${TOMCAT_HOME}/webapps/* && \
     apk del curl && \
     rm -rf /tmp/* /var/cache/apk/*
