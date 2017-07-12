@@ -1,13 +1,22 @@
 ### Docker samples
 
-#### How to run
+#### S2I Builder Image - Spring Boot for Maven3 (Openshift3)
 
-- Tomcat (Docker)
+```
+docker push cbelleza/springboot-maven3
+oc import-image --from=cbelleza/springboot-maven3 springboot
+oc new-app springboot~https://github.com/cbelleza/spring-boot-samples.git --name=basewebapp --context-dir=spring-boot-basewebapp
+```
+
+
+#### Tomcat
+
+- Docker
 ```
 docker run -it -p 8080:8080 -v c:/openshift/tomcat:/opt/apache-tomcat/webapps cbelleza/tomcat
 ```
 
-- Tomcat (Openshift3)
+- Openshift3
 ```
 oc new-app https://github.com/cbelleza/docker-samples.git --context-dir=tomcat
 ```
