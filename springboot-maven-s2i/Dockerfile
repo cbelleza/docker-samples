@@ -11,7 +11,7 @@ LABEL io.k8s.description="Platform for building and running Spring Boot applicat
 
 ENV MAVEN_VERSION=3.5.0
 
-RUN mkdir -p /usr/local/maven && \
+RUN mkdir -p /usr/local/maven /opt/app && \
 	chown -R 1001:1001 /opt/app && \
 	apk add --no-cache --update openjdk8 bash curl && \
 	curl -jksSL -o /tmp/apache-maven.tar.gz https://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz && \

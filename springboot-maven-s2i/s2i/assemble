@@ -11,7 +11,7 @@ HOME_DIR=/opt/app
 HOME_SOURCE_DIR=$HOME_DIR/src
 
 echo "--> Building Spring Boot application from source"
-echo "---> Running Maven"
+echo "---> Running Maven3"
 echo "---> MVN_ARGS = $MVN_ARGS"
 
 cd /opt/app/src
@@ -22,3 +22,6 @@ cp $HOME_SOURCE_DIR/target/*.jar $HOME_DIR
 
 # Clean up src folder
 rm -r $HOME_SOURCE_DIR
+
+echo "->List content"
+ls $HOME_DIR
