@@ -2,9 +2,8 @@
 
 set -e
 
-APP_TARGET=${APP_TARGET:-target}
+LOCAL_BINARY_DIR=/opt/app/bin
+
 echo "---> Starting Spring Boot application"
-echo "--> # APP_TARGET = $APP_TARGET"
 echo "--> # JAVA_OPTS = $JAVA_OPTS"
-echo "---> Running application from jar ($(find $APP_TARGET -name *.jar)) ..."
-java $JAVA_OPTS -jar /opt/app/`find $APP_TARGET -name *.jar`
+java $JAVA_OPTS -jar $LOCAL_BINARY_DIR/*.jar

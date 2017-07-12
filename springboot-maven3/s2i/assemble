@@ -7,6 +7,7 @@ if [ "$1" = "-h" ]; then
 	exec /usr/local/s2i/usage
 fi
 
+LOCAL_BINARY_DIR=/opt/app/bin
 LOCAL_SOURCE_DIR=/opt/app/src
 
 echo "--> Building Spring Boot application from source"
@@ -16,8 +17,8 @@ echo "---> MVN_ARGS = $MVN_ARGS"
 cd /opt/app/src
 mvn clean install $MVN_ARGS
 
-# Clean up after maven
-mvn clean
-if [ -d "$LOCAL_SOURCE_DIR/.m2/repository" ]; then
-	rm -r "$LOCAL_SOURCE_DIR/.m2/repository"
-fi
+# Copy artefact
+cp $LOCAL_SOURCE_DIR/target/*.jar $LOCAL_BINARY_DIR
+
+# Clean up src folder
+rm -r $LOCAL_SOURCE_DIR
