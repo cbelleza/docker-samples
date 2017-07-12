@@ -4,8 +4,9 @@
 
 ```
 docker push cbelleza/springboot-maven3
-oc new-app springboot~https://github.com/RedHatWorkshops/spring-sample-app.git --name=bootapp
 oc import-image --from=cbelleza/springboot-maven3 springboot
+oc new-app springboot~https://github.com/RedHatWorkshops/spring-sample-app.git --name=bootapp
+
 ```
 
 
