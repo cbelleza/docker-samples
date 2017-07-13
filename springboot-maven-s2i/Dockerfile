@@ -1,4 +1,4 @@
-FROM alpine
+FROM openjdk:8-jre-alpine
 
 MAINTAINER Carlos Alberto <cbelleza@gmail.com>
 
@@ -13,7 +13,7 @@ ENV MAVEN_VERSION=3.5.0
 
 RUN mkdir -p /usr/local/maven /opt/app && \
 	chown -R 1001:1001 /opt/app && \
-	apk add --no-cache --update openjdk8 bash curl && \
+	apk add --no-cache --update bash curl && \
 	curl -jksSL -o /tmp/apache-maven.tar.gz https://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz && \
 	gunzip /tmp/apache-maven.tar.gz && \
 	tar -C /usr/local -xf /tmp/apache-maven.tar && \

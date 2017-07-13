@@ -1,5 +1,7 @@
 FROM openjdk:8-jre-alpine
 
+MAINTAINER Carlos Alberto <cbelleza@gmail.com>
+
 ENV TOMCAT_MAJOR=8 \
 	TOMCAT_VERSION=8.5.16 \
 	TOMCAT_HOME=/opt/apache-tomcat
@@ -19,8 +21,11 @@ RUN mkdir /opt && \
 	rm -rf /tmp/* /var/cache/apk/*
 
 EXPOSE 8080
+
 VOLUME ${TOMCAT_HOME}/webapps
+
 WORKDIR ${TOMCAT_HOME}
+
 USER tomcat
 
 # run tomcat by default
