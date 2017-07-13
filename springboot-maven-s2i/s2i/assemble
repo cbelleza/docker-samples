@@ -25,3 +25,6 @@ rm -r $HOME_SOURCE_DIR
 
 echo "->List content"
 ls $HOME_DIR
+
+
+ls
