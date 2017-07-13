@@ -3,7 +3,7 @@
 #### S2I Builder Image - Spring Boot for Maven3 (Openshift3)
 
 ```
-docker push cbelleza/springboot-maven3
+docker push cbelleza/springboot-maven-s2i springboot
 oc import-image --from=cbelleza/springboot-maven-s2i springboot --confirm
 oc new-app springboot~https://github.com/cbelleza/spring-boot-samples.git --name=basewebapp --context-dir=spring-boot-basewebapp
 ```
