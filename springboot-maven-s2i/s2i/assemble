@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Abort immediately
+# Abort immediately 
 set -e
 
 if [ "$1" = "-h" ]; then
