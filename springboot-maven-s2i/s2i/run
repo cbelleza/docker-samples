@@ -4,6 +4,6 @@ set -e
 
 HOME_DIR=/opt/app
 
-echo "---> Starting Spring Boot application" 
+echo "---> Starting Spring Boot application"
 echo "--> # JAVA_OPTS = $JAVA_OPTS"
 java $JAVA_OPTS -jar $HOME_DIR/*.jar
