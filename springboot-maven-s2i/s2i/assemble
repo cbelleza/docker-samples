@@ -14,14 +14,11 @@ echo "--> Building Spring Boot application from source"
 echo "---> Running Maven3"
 echo "---> MVN_ARGS = $MVN_ARGS"
 
-cd /opt/app/src
+cd $HOME_SOURCE_DIR
 mvn clean install $MVN_ARGS
 
-# Copy artefact
+# Copy artefact generated to home folder
 cp $HOME_SOURCE_DIR/target/*.jar $HOME_DIR
 
-# Clean up src folder
+# Clean up src folder, maven dependencies, installation
 rm -r $HOME_SOURCE_DIR
-
-echo "->List content"
-ls $HOME_DIR
